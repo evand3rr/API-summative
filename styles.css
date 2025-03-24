@@ -1,0 +1,115 @@
+body{
+    background-color: transparent;
+    background-image: url(images/weather\ forecast.jpg);
+    margin: 100;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    box-sizing: border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+.card{
+   width: 60%;
+   max-width: 500px;
+   background: linear-gradient(135deg, #14cece, #110464);
+   color: rgb(10, 9, 9);
+   margin: 100px auto 0;
+   border-radius: 20px;
+   padding: 40px 30px;
+   text-align: left;
+   background-blend-mode: normal;
+}
+.search{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.search input{
+    border: 0;
+    outline: 0;
+    background: rgb(12, 9, 9);
+    color: #00feba;
+    padding: 10px 20px;
+    height: 50px;
+    border-radius: 45px;
+    flex: 1;
+    margin-right: 16px;
+    font-size: 18px;
+}
+.search button{
+    border: 0;
+    outline: 0;
+    background: fixed;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    cursor: pointer;
+    background-color: transparent;
+}
+.search button .fa-solid{
+    width: 30px;
+    font-size: 28px;
+}
+.weather{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.weather-icon{
+    width: 170px;
+    margin-top: 30px;
+    margin-left: 100px;
+    margin: 0 auto;
+    padding: 40px;
+}
+.weather h1{
+    font-size: 75px;
+    font-weight: 00;
+    margin-left: 100px;
+    margin-right: 100px;
+    margin-top: -10px;
+}
+.weather h2{
+    font-size: 45px;
+    font-weight: 400;
+    margin-top: -20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+.details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    margin-top: 50px;
+    gap: 80px;
+}
+.col{
+    display: flex;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+.col img{
+    width: 80px;
+    height: auto; 
+    margin-left: 7px;
+}
+.humidity, .wind{
+    font-size: 21px;
+    margin-top: -5px;
+}
+.weather{
+    display: none;
+}
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+}
