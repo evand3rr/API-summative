@@ -28,7 +28,7 @@ Includes current weather, forecasts, and historical data.
 Setup and Installation
 To set up and run the application locally, follow these steps:
 
-git clone https://github.com/Emma-Asoliya/API_SUMMATIVE.git
+git clone https://github.com/evand3rr/API-summative.git
 
 Install Dependencies:This project requires no external libraries or package managers. Ensure you have a modern web browser installed.
 
