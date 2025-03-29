@@ -1,8 +1,7 @@
 WEATHER WEB APP
 Project Overview
-This project is a summative that would determine my understanding of APIs and how good I am at using them. I would create a weather web application to help people find the weather in any country of their choice. Just like we can find the time in different countries based on preference or location, my web app would do the same. Making use of HTML, CSS, and Javascript, I would make a visually appealing and interactive website that is easy to navigate and pleasing to view. I would also use the OpenWeatherMap API to solve the problem and give me access to the weather in different countries of the world. Although I faced some challenges with my servers and public keys, I was able to fix them and make sure the right file was being shown and traffic was being distributed evenly across both servers. I got help from classmates and watched videos to learn how to deploy a website. I had cloned my repo in /var/www/html/, where index files were located along with my repo, so when my web app was deployed, it hosted the index file from that directory instead of from my repo directory. I spotted the problem and was able to rectify it. I configured my load balancer to distribute traffic evenly across both servers and made sure they were seen by using the X-Served-By
+This project entails the use of APIs and their integration so as to make a benefitting application to the community. The weather web app can be used to find out the weather conditions of any geographical location in the world in realtime, making it efficient and the information easily accessible. There were a bit of hindrances here and there, in regards to the Javascript writing and finding a suitable API, but I eventually pulled through.
 
-Technologies Used
 The following technologies and tools were used to develop this application:
 
 HTML: For structuring the application.
@@ -11,8 +10,8 @@ CSS: For designing the layout and styling.
 
 JavaScript: For interactivity, API calls, and client-side logic.
 
-Features
-Integrates live data from multiple APIs to enrich the user experience.
+The features of the application are;
+Integrates live data from the API to enrich the user experience.
 
 Displays user-friendly error messages in case of API failures or connectivity issues.
 
