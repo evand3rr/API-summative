@@ -46,7 +46,6 @@ For a better development experience, use a live server (e.g., Live Server extens
 
 Deploying to Web Servers
 Deploying to Custom Web Servers
-Compress all project files (index.html, styles.css, config.js, etc.) into a ZIP file or use an FTP client.
 
 Upload the files to your web server
 
@@ -64,3 +63,5 @@ We acknowledge the contributions of the following resources and tools:
 API Providers:
 
 OpenWeatherAPI for reliable weather data.
+
+Here's the link to the demo video: https://drive.google.com/file/d/1vEJqrvPMIiMeT5u7bpFTR4sYDJzqMn43/view?usp=sharing
