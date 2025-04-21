@@ -1,37 +1,38 @@
-const searchBox = document.querySelector(".search input");
-const searchBtn = document.querySelector(".search button");
-const weatherIcon = document.querySelector(".weather-icon");
+const apiUrl = "http://localhost:3000/api/weather";
 
-async function checkWeather(city) {
-    const response = await fetch(`/api/weather?city=${city}`);
-
-    if (response.status === 404) {
-        document.querySelector(".error").style.display = "block";
-        document.querySelector(".weather").style.display = "none";
-    } else {
-        const data = await response.json();
-
-        document.querySelector(".city").innerHTML = data.name;
-        document.querySelector(".temp").innerHTML = Math.round(data.main.temp) + "°C";
-        document.querySelector(".humidity").innerHTML = data.main.humidity + "%";
-        document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
-
-        // Set Weather Icons
-        const weatherConditions = {
-            "Clouds": "images/clouds.png",
-            "Clear": "images/clear.png",
-            "Rain": "images/rain.png",
-            "Drizzle": "images/drizzle.png",
-            "Mist": "images/mist.png"
-        };
-        weatherIcon.src = weatherConditions[data.weather[0].main] || "images/default.png";
-
-        document.querySelector(".weather").style.display = "block";
-        document.querySelector(".error").style.display = "none";
-    }
+// Function to fetch weather data
+async function fetchWeather(city) {
+  try {
+    const response = await fetch(`${apiUrl}?city=${city}`);
+    const data = await response.json();
+    updateUI(data);
+  } catch (error) {
+    console.error("Error fetching weather data:", error);
+    alert("Failed to fetch weather data. Please try again.");
+  }
 }
 
-searchBtn.addEventListener("click", () => {
-    checkWeather(searchBox.value);
+// Function to update the UI with weather data
+function updateUI(data) {
+  document.getElementById("city-name").textContent = `${data.name}, ${data.sys.country}`;
+  document.getElementById("temperature").textContent = `${data.main.temp.toFixed(1)}°C`;
+  document.getElementById("weather-description").textContent = data.weather[0].description;
+  document.getElementById("weather-img").src = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+  document.getElementById("wind").textContent = `${data.wind.speed} m/s`;
+  document.getElementById("humidity").textContent = `${data.main.humidity}%`;
+  document.getElementById("pressure").textContent = `${data.main.pressure} hPa`;
+  document.getElementById("visibility").textContent = `${(data.visibility / 1000).toFixed(1)} km`;
+  document.getElementById("sunrise").textContent = new Date(data.sys.sunrise * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+  document.getElementById("sunset").textContent = new Date(data.sys.sunset * 1000).toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+}
+
+// Event listener for search button
+document.getElementById("search-btn").addEventListener("click", () => {
+  const city = document.getElementById("city-input").value.trim();
+  if (city) {
+    fetchWeather(city);
+  }
 });
 
+// Initial fetch for default city (Kigali)
+fetchWeather("kigali");

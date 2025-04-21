@@ -1,19 +1,20 @@
 const express = require("express");
-const fetch = require("node-fetch");
 const dotenv = require("dotenv");
-const path = require("path");
-
+const cors = require("cors")
 dotenv.config();  // Load API key from .env file
 
 const app = express();
+app.use(cors({
+    origin: '*',
+    methods: ['GET', 'POST'],
+    allowedHeaders: ['Content-Type'],
+    credentials: false // Set to true only if using cookies or auth headers
+  }));
 const PORT = process.env.PORT || 3000;
-
-// Middleware to serve static files (HTML, CSS, JS)
-app.use(express.static(path.join(__dirname, "public")));
 
 // API Route: Fetch Weather Data from OpenWeatherMap
 app.get("/api/weather", async (req, res) => {
-    const city = req.query.city;
+    const {city} = req.query;
     if (!city) {
         return res.status(400).json({ error: "City is required" });
     }
@@ -30,6 +31,7 @@ app.get("/api/weather", async (req, res) => {
         const data = await response.json();
         res.json(data);
     } catch (error) {
+        console.log(error)
         res.status(500).json({ error: "Failed to fetch weather data" });
     }
 });

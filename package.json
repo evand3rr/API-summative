@@ -2,8 +2,9 @@
   "name": "api-summative",
   "version": "1.0.0",
   "description": "WEATHER WEB APP Project Overview This project is a summative that would determine my understanding of APIs and how good I am at using them. I would create a weather web application to help people find the weather in any country of their choice. Just like we can find the time in different countries based on preference or location, my web app would do the same. Making use of HTML, CSS, and Javascript, I would make a visually appealing and interactive website that is easy to navigate and pleasing to view. I would also use the OpenWeatherMap API to solve the problem and give me access to the weather in different countries of the world. Although I faced some challenges with my servers and public keys, I was able to fix them and make sure the right file was being shown and traffic was being distributed evenly across both servers. I got help from classmates and watched videos to learn how to deploy a website. I had cloned my repo in /var/www/html/, where index files were located along with my repo, so when my web app was deployed, it hosted the index file from that directory instead of from my repo directory. I spotted the problem and was able to rectify it. I configured my load balancer to distribute traffic evenly across both servers and made sure they were seen by using the X-Served-By",
-  "main": "config.js",
+  "main": "server.js",
   "scripts": {
+    "dev": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -13,13 +14,11 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/evand3rr/API-summative/issues"
-  },
-  "homepage": "https://github.com/evand3rr/API-summative#readme",
   "dependencies": {
+    "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "node-fetch": "^3.3.2"
+    "node-fetch": "^3.3.2",
+    "nodemon": "^3.1.9"
   }
 }
