@@ -64,4 +64,4 @@ API Providers:
 
 OpenWeatherAPI for reliable weather data.
 
-Here's the link to the demo video: https://drive.google.com/file/d/1vEJqrvPMIiMeT5u7bpFTR4sYDJzqMn43/view?usp=sharing
+Here's the link to the demo video: https://drive.google.com/file/d/18TKK9Qy2OQFbt46jZ5d4TILX0BihqeJp/view?usp=sharing
